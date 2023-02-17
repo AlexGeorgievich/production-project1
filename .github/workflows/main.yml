@@ -12,7 +12,7 @@ jobs:
         node-version: [ 17.x ]
 
     steps:
-      - user: actions/chechout@3
+      - user: actions/checkout@3
       - name: Starting Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
