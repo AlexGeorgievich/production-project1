@@ -1,8 +1,8 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import React, { useState } from 'react';
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
-import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
-import { Button } from 'shared/ui/Button/Button';
+import {classNames} from 'shared/lib/classNames/classNames';
+import React, {useState} from 'react';
+import {ThemeSwitcher} from 'shared/ui/ThemeSwitcher';
+import {LangSwitcher} from 'shared/ui/LangSwitcher/LangSwitcher';
+import {Button} from 'shared/ui/Button/Button';
 import cls from './Sidebar.module.scss';
 import {useTranslation} from "react-i18next";
 
@@ -14,7 +14,7 @@ interface SidebarProps {
 
 // принимает из вне какой-то доп. класс
 // примет - src-widgets-Sidebar-ui-Sidebar-module__navbar
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = ({className}: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
     const {t} = useTranslation();
 
@@ -26,7 +26,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
     return (
         <div
             data-testid="sidebar"
-            className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
+            className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}
         >
             <Button
                 data-testid="sidebar-toggle"
@@ -36,8 +36,8 @@ export const Sidebar = ({ className }: SidebarProps) => {
 
             </Button>
             <div className={cls.switchers}>
-                <ThemeSwitcher />
-                <LangSwitcher className={cls.lang} />
+                <ThemeSwitcher/>
+                <LangSwitcher className={cls.lang}/>
             </div>
         </div>
     );
