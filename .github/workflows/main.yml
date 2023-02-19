@@ -30,6 +30,4 @@ jobs:
       - name: build storybook
         run: npm run storybook:build
       - name: screenshot testing
-        run: npm run test1:ui:ci
-      - name: screenshot testing-1
-        run: npm run test1:ui:ci
+        run: npm run test3:ui:ci
