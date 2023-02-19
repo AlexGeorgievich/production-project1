@@ -4,6 +4,7 @@ module.exports = {
         es2021: true,
         jest: true,
     },
+
     extends: [
         'plugin:react/recommended',
         'airbnb',
@@ -30,6 +31,7 @@ module.exports = {
             2,
             { extensions: ['.js', '.jsx', '.tsx'] },
         ],
+        'linebreak-style': 0,
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
         'no-unused-vars': 'warn',
