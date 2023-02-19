@@ -18,6 +18,7 @@
     "test2:ui:ci": "loki --requireReference --reactUri file:./storybook-static --chromeFlags=\"--headless --disable-gpu --hide-scrollbars --no-sandbox\" ",
     "test1:ui:ci": "concurrently --kill-others --raw --success first \"loki --requireReference --reactUri file:./storybook-static\" \"deelay\" ",
     "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
+    "test4:ui:ci": "loki  update --requireReference --reactUri file:./storybook-static",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook"
   },
@@ -99,14 +100,14 @@
   "loki": {
     "configurations": {
       "chrome.laptop": {
-        "target": "chrome.app",
+        "target": "chrome.docker",
         "width": 1366,
         "height": 768,
         "deviceScaleFactor": 1,
         "mobile": false
       },
       "chrome.iphone7": {
-        "target": "chrome.app",
+        "target": "chrome.docker",
         "preset": "iPhone 7"
       }
     }
