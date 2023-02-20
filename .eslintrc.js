@@ -4,7 +4,6 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-
     extends: [
         'plugin:react/recommended',
         'airbnb',
@@ -24,7 +23,6 @@ module.exports = {
         'i18next',
     ],
     rules: {
-        'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
