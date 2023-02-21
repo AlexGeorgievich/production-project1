@@ -114,7 +114,8 @@
         "target": "chrome.app",
         "preset": "iPhone 7"
       }
-    }
+    },
+    "fetchFailIgnore": "localhost:1234/get"
   },
   "volta": {
     "node": "17.4.0"
