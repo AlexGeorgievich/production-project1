@@ -4,6 +4,12 @@ module.exports = {
         es2021: true,
         jest: true,
     },
+    settings: {
+        'react': {
+            'version': 'detect'
+        }
+    },
+
     extends: [
         'plugin:react/recommended',
         'airbnb',
@@ -20,17 +26,19 @@ module.exports = {
     plugins: [
         'react',
         '@typescript-eslint',
+        'autofix',
         'i18next',
         "react-hooks"
     ],
     rules: {
-        'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
+        // 'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
+        'linebreak-style': 0,
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
         'react/jsx-filename-extension': [
             2,
-            { extensions: ['.js', '.jsx', '.tsx'] },
+            {extensions: ['.js', '.jsx', '.tsx']},
         ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
@@ -50,7 +58,7 @@ module.exports = {
                 ignoreAttribute: ['data-testid', 'to'],
             },
         ],
-        'max-len': ['error', { ignoreComments: true, code: 100 }],
+        'max-len': ['error', {ignoreComments: true, code: 100}],
         'jsx-a11y/no-static-element-interactions': 'off',
         "react-hooks/rules-of-hooks": "error", // Проверяем правила хуков
         "react-hooks/exhaustive-deps": "error" // Проверяем зависимости эффекта

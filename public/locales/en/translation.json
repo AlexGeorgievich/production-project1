@@ -8,5 +8,10 @@
   "Обновить страницу": "Overwrite page",
   "throw error": "throw error",
   "Короткий язык": "En",
-  "Войти": "Enter"
+  "Войти": "Enter",
+  "('Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
+    " Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam": {
+      "')": "('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.')"
+    }
+  }
 }

@@ -1,22 +1,22 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from 'shared/lib/classNames/classNames';
+import React, { ReactNode, useCallback, useEffect, useRef, useState, } from 'react';
+import { Portal } from 'shared/ui/Portal/Portal';
+import { useTheme } from 'app/providers/ThemeProvider';
 import cls from './Modal.module.scss';
-import React, { ReactNode, useCallback, useEffect, useRef, useState } from "react";
-import { Portal } from "shared/ui/Portal/Portal";
-import { useTheme } from "app/providers/ThemeProvider";
 
 // интерфейс на каждый компонент - название+Props
 // интерфейс описывает пропсы на вход Modal
-interface ModalProps  {
+interface ModalProps {
     className?: string;
     children?: ReactNode;
-    isOpen?: boolean;       // открыто или нет
-    onClose?: () => void;   //  закрываем
+    isOpen?: boolean; // открыто или нет
+    onClose?: () => void; //  закрываем
 }
 
 const ANIMATION_DELAY = 300;
 
 export const Modal = (props: ModalProps) => {
-    const  {
+    const {
         className,
         children,
         isOpen,
@@ -29,58 +29,56 @@ export const Modal = (props: ModalProps) => {
     const {theme} = useTheme();
 
     const closeHandler = useCallback(() => {
-        if(onClose){
+        if (onClose) {
             setIsClosing(true);
-            timerRef.current = setTimeout( () => {
+            timerRef.current = setTimeout(() => {
                 onClose();
-                setIsClosing(false)
+                setIsClosing(false);
             }, ANIMATION_DELAY);
         }
     }, [onClose]);
 
-// для предотвращения всплытия на контент часть навесим слушатель
-// - принимает ивент, есть тип React.MouseEvent
+    // для предотвращения всплытия на контент часть навесим слушатель
+    // - принимает ивент, есть тип React. MouseEvent
     const onContentClick = (e: React.MouseEvent) => {
         e.stopPropagation();
-    }
+    };
 
     const onKeyDown = useCallback((e: KeyboardEvent) => {
-        if(e.key ==='Escape') {
+        if (e.key === 'Escape') {
             closeHandler();
         }
-    },[onClose]);
+    }, [closeHandler]);
 
     useEffect(() => {
-        if(isOpen) {
+        if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
         }
 
         return () => {
             clearTimeout(timerRef.current);
-            window.removeEventListener('keydown',onKeyDown);
-        }
-    },[isOpen, onKeyDown])
+            window.removeEventListener('keydown', onKeyDown);
+        };
+    }, [isOpen, onKeyDown]);
 
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
         [cls[theme]]: true,
-    }
+    };
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods,[className])}>
-                <div className={cls.overlay} onClick={closeHandler} >
+            <div className={ classNames(cls.Modal, mods, [className]) }>
+                <div className={ cls.overlay } onClick={ closeHandler }>
                     <div
                         className={ cls.content }
-                        onClick={onContentClick}
+                        onClick={ onContentClick }
                     >
-                        {children}
+                        { children }
                     </div>
                 </div>
             </div>
         </Portal>
-
     );
 };
-

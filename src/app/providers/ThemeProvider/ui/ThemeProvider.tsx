@@ -5,12 +5,11 @@ import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext }
 
 const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT;
 
-interface ThemProviderProps  {
+interface ThemProviderProps {
     initialTheme?: Theme;
 }
 
 const ThemeProvider: FC<ThemProviderProps> = (props) => {
-
     const {
         initialTheme,
         children,
