@@ -26,7 +26,7 @@ export const Modal = (props: ModalProps) => {
     const [isClosing, setIsClosing] = useState(false);
     // можем получить тип, который возвращает функция
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
-    const {theme} = useTheme();
+    const { theme } = useTheme();
 
     const closeHandler = useCallback(() => {
         if (onClose) {
