@@ -11,8 +11,8 @@ interface NavbarProps {
 }
 
 // примет - src-widgets-Navbar-ui-Navbar-module__navbar
-export const Navbar = ({className}: NavbarProps) => {
-    const {t} = useTranslation();
+export const Navbar = ({ className }: NavbarProps) => {
+    const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
 
     const onToggleModal = useCallback(() => {
