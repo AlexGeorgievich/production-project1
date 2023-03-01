@@ -5,5 +5,5 @@ import { CounterSchema } from '../../types/counterSchema';
 // позволяет переиспользовать другие селекторы, которые у нас уже есть
 export const getCounterValue = createSelector(
     getCounter,
-    (counter: CounterSchema) => counter.value
+    (counter: CounterSchema) => counter.value,
 );

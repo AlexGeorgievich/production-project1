@@ -20,15 +20,15 @@ export const Navbar = ({ className }: NavbarProps) => {
     }, []);
 
     return (
-        <div className={ classNames(cls.Navbar, {}, [className]) }>
+        <div className={classNames(cls.Navbar, {}, [className])}>
             <Button
-                theme={ ButtonTheme.CLEAR_INVERTED }
-                className={ cls.links }
-                onClick={ onToggleModal }
+                theme={ButtonTheme.CLEAR_INVERTED}
+                className={cls.links}
+                onClick={onToggleModal}
             >
                 { t('Войти') }
             </Button>
-            <Modal isOpen={ isAuthModal } onClose={ onToggleModal }>
+            <Modal isOpen={isAuthModal} onClose={onToggleModal}>
                 {/* eslint-disable-next-line */ }
                 { t('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam.') }
             </Modal>

@@ -7,9 +7,9 @@ const MainPage = () => {
 
     return (
         <div>
-            {/*<BugButton/>*/ }
+            {/* <BugButton/> */ }
             { t('Главная страница') }
-            <Counter/>
+            <Counter />
         </div>
     );
 };

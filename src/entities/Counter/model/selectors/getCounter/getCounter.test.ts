@@ -1,6 +1,6 @@
-import { getCounter } from './getCounter';
 import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoryProvider';
+import { getCounter } from './getCounter';
 
 describe('getCounter', () => {
     // селектор возвращает тот участок state, что ожидаем, DeepPartial позволяет работать с частью state
@@ -8,9 +8,7 @@ describe('getCounter', () => {
     test('schould return counter value', () => {
         const state: DeepPartial<StateSchema> = {
             counter: { value: 10 },
-        }
+        };
         expect(getCounter(state as StateSchema)).toEqual({ value: 10 });
-    })
-})
-
- 
+    });
+});
