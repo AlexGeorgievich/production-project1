@@ -1,4 +1,5 @@
 {
+  "": "",
   " О сайте": " О сайте",
   "('Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam": {
@@ -13,6 +14,8 @@
   "decrement-": "decrement-",
   "increment": "increment",
   "throw error": "throw error",
+  "Введите password": "Введите password",
+  "Введите username": "Введите username",
   "Войти": "",
   "Главная": "Главная",
   "Главная страница": "Главная страница",

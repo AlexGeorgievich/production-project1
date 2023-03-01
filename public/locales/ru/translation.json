@@ -15,5 +15,9 @@
     }
   },
   "('decrement-')": "('decrement-')",
-  "('increment')": "('increment')"
+  "('increment')": "('increment')",
+  "('Войти')": "('Войти')",
+  "('Введите username')": "('Введите username')",
+  "('Введите password')": "('Введите password')",
+  "Введите текст": "Введите текст"
 }
