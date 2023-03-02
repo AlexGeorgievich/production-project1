@@ -32,6 +32,9 @@ module.exports = {
     ],
     rules: {
         // 'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
+        // "space-in-brackets": ["error", "always", {
+        //     "arraysInObjects": false,
+        // }],
         'linebreak-style': 0,
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],

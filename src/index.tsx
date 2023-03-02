@@ -12,7 +12,7 @@ render(
         <BrowserRouter>
             <ErrorBoundary>
                 <ThemeProvider>
-                    <App/>
+                    <App />
                 </ThemeProvider>
             </ErrorBoundary>
         </BrowserRouter>
